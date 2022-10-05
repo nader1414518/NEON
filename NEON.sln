@@ -3,24 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{35FA65A2-7196-4D97-8857-CA1EF20B072D}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NEON", "NEON\NEON.vcxproj", "{612CA069-97BF-4AEB-A65E-A6C799161BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Debug|x64.ActiveCfg = Debug|x64
 		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Debug|x64.Build.0 = Debug|x64
-		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Debug|x86.ActiveCfg = Debug|Win32
-		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Debug|x86.Build.0 = Debug|Win32
 		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Release|x64.ActiveCfg = Release|x64
 		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Release|x64.Build.0 = Release|x64
-		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Release|x86.ActiveCfg = Release|Win32
-		{612CA069-97BF-4AEB-A65E-A6C799161BFA}.Release|x86.Build.0 = Release|Win32
+		{35FA65A2-7196-4D97-8857-CA1EF20B072D}.Debug|x64.ActiveCfg = Debug|x64
+		{35FA65A2-7196-4D97-8857-CA1EF20B072D}.Debug|x64.Build.0 = Debug|x64
+		{35FA65A2-7196-4D97-8857-CA1EF20B072D}.Release|x64.ActiveCfg = Release|x64
+		{35FA65A2-7196-4D97-8857-CA1EF20B072D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

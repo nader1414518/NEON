@@ -1,0 +1,3 @@
+﻿  Application.cpp
+D:\NEONEngine\NEON\Sandbox\src\Application.cpp(5,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Sandbox.vcxproj -> D:\NEONEngine\NEON\bin\Debug-x64\Sandbox\Sandbox.exe

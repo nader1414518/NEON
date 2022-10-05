@@ -1,0 +1,5 @@
+﻿  Test.cpp
+D:\NEONEngine\NEON\NEON\src\Test.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\NEONEngine\NEON\NEON\src\Test.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     Creating library D:\NEONEngine\NEON\bin\Debug-x64\NEON\NEON.lib and object D:\NEONEngine\NEON\bin\Debug-x64\NEON\NEON.exp
+  NEON.vcxproj -> D:\NEONEngine\NEON\bin\Debug-x64\NEON\NEON.dll
