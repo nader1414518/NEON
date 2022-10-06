@@ -6,7 +6,11 @@ extern Neon::Application* Neon::CreateApplication();
 
 void main(int argc, char** argv)
 {
-	printf("NEON Started ... ");
+	Neon::Log::Init();
+	
+	NeonCoreLogWarning("Neon Engine Initialized ... ");
+	NeonLogInfo("Sanbox Initialized ... ");
+
 	auto app = Neon::CreateApplication();
 	app->Run();
 	delete app;

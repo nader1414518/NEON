@@ -1,0 +1,3 @@
+[submodule "Neon/vendor/spdlog"]
+	path = Neon/vendor/spdlog
+	url = https://github.com/gabime/spdlog
