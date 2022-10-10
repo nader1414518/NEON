@@ -143,13 +143,19 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\NEON_PCH.h" />
     <ClInclude Include="src\Neon.h" />
     <ClInclude Include="src\Neon\Application.h" />
     <ClInclude Include="src\Neon\Core.h" />
     <ClInclude Include="src\Neon\EntryPoint.h" />
+    <ClInclude Include="src\Neon\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Neon\Events\Event.h" />
+    <ClInclude Include="src\Neon\Events\KeyEvent.h" />
+    <ClInclude Include="src\Neon\Events\MouseEvent.h" />
     <ClInclude Include="src\Neon\Log.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\NEON_PCH.cpp" />
     <ClCompile Include="src\Neon\Application.cpp" />
     <ClCompile Include="src\Neon\Log.cpp" />
   </ItemGroup>

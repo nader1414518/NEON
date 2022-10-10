@@ -4,8 +4,12 @@
     <Filter Include="Neon">
       <UniqueIdentifier>{7591897C-61C8-8A0D-0AB5-7010F6CA060F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Neon\Events">
+      <UniqueIdentifier>{B96788F7-251D-01ED-AE11-FBC31AC6F7F0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\NEON_PCH.h" />
     <ClInclude Include="src\Neon.h" />
     <ClInclude Include="src\Neon\Application.h">
       <Filter>Neon</Filter>
@@ -16,11 +20,24 @@
     <ClInclude Include="src\Neon\EntryPoint.h">
       <Filter>Neon</Filter>
     </ClInclude>
+    <ClInclude Include="src\Neon\Events\ApplicationEvent.h">
+      <Filter>Neon\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Neon\Events\Event.h">
+      <Filter>Neon\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Neon\Events\KeyEvent.h">
+      <Filter>Neon\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Neon\Events\MouseEvent.h">
+      <Filter>Neon\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Neon\Log.h">
       <Filter>Neon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\NEON_PCH.cpp" />
     <ClCompile Include="src\Neon\Application.cpp">
       <Filter>Neon</Filter>
     </ClCompile>

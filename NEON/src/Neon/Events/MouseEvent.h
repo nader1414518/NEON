@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Neon {
 	class NEON_API MouseMovedEvent : public Event
 	{

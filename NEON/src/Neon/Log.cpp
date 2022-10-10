@@ -1,4 +1,5 @@
 #include "Log.h";
+#include "NEON_PCH.h";
 
 namespace Neon {
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;

@@ -18,6 +18,9 @@ project "Neon"
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    -- pchheader "NEON_PCH.h"
+    -- pchsource "Neon/src/NEON_PCH.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",

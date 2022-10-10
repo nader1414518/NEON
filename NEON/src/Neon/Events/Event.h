@@ -1,9 +1,8 @@
 #pragma once
 
 #include "Neon/Core.h"
+#include "NEON_PCH.h"
 
-#include <string>
-#include <functional>
 
 namespace Neon {
 	// Events are blockng => when an event is being processed other events cannot get into the way
