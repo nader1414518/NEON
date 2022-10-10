@@ -9,3 +9,5 @@
 #else
 	#error NEON Only Support Windows For Now!!
 #endif
+
+#define BIT(x) (1 << x)

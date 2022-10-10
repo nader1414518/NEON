@@ -1,4 +1,7 @@
-#include "Application.h"
+#include "Application.h";
+
+#include "Neon/Events/ApplicationEvent.h";
+#include "Neon/Log.h";
 
 namespace Neon {
 	Application::Application() {
@@ -10,6 +13,9 @@ namespace Neon {
 	};
 
 	void Application::Run() {
+		WindowResizeEvent e(1280, 720);
+		NeonLogTrace(e);
+
 		while (true);
 	};
 }
