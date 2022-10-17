@@ -16,7 +16,7 @@ namespace Neon {
 		int m_KeyCode;
 	};
 
-	class NEON_API KeyPressedEvent : public Event
+	class NEON_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keyCode, int repeatCount)
