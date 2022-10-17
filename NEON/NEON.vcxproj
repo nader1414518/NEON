@@ -83,6 +83,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -107,6 +108,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -132,6 +134,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -155,6 +158,8 @@
     <ClInclude Include="src\Neon\Events\Event.h" />
     <ClInclude Include="src\Neon\Events\KeyEvent.h" />
     <ClInclude Include="src\Neon\Events\MouseEvent.h" />
+    <ClInclude Include="src\Neon\Layer.h" />
+    <ClInclude Include="src\Neon\LayerStack.h" />
     <ClInclude Include="src\Neon\Log.h" />
     <ClInclude Include="src\Neon\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -162,6 +167,8 @@
   <ItemGroup>
     <ClCompile Include="src\NEON_PCH.cpp" />
     <ClCompile Include="src\Neon\Application.cpp" />
+    <ClCompile Include="src\Neon\Layer.cpp" />
+    <ClCompile Include="src\Neon\LayerStack.cpp" />
     <ClCompile Include="src\Neon\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>

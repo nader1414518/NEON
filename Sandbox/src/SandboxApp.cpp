@@ -1,9 +1,29 @@
 #include <Neon.h>
 
+
+class ExampleLayer : public Neon::Layer
+{
+public:
+	ExampleLayer() : Layer("Example")
+	{
+
+	}
+
+	void OnUpdate() override
+	{
+		NeonLogInfo("ExampleLayer::Update");
+	}
+
+	void OnEvent(Neon::Event& event) override
+	{
+		NeonLogTrace("{0}", event);
+	}
+};
+
 class Sandbox : public Neon::Application {
 public:
 	Sandbox() {
-
+		PushLayer(new ExampleLayer());
 	};
 
 	~Sandbox() {

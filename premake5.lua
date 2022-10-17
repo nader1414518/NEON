@@ -64,14 +64,17 @@ project "Neon"
 
     filter "configurations:Debug"
         defines "NEON_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "NEON_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "NEON_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 
@@ -112,12 +115,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "NEON_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "NEON_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "NEON_DIST"
+        buildoptions "/MD"
         optimize "On"

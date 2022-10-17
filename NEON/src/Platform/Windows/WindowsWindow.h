@@ -6,7 +6,7 @@
 
 namespace Neon {
 
-	class WindowsWindow : public Window
+	class NEON_API WindowsWindow : public Window
 	{
 	public:
 		WindowsWindow(const WindowProps& props);

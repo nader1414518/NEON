@@ -43,6 +43,8 @@ namespace Neon {
 			return GetCategoryFlags() & category;
 		};
 
+		bool IsHandled() { return m_Handled; }
+
 	protected:
 		bool m_Handled = false;
 	};

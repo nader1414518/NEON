@@ -5,6 +5,7 @@
 #include "Neon/Core.h";
 #include "Neon/Application.h";
 #include <stdio.h>;
+#include "Neon/Layer.h";
 
 ///////////////// Log Level ////////////////////
 #include "Neon/Log.h";

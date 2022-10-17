@@ -38,6 +38,12 @@
     <ClInclude Include="src\Neon\Events\MouseEvent.h">
       <Filter>Neon\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Neon\Layer.h">
+      <Filter>Neon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Neon\LayerStack.h">
+      <Filter>Neon</Filter>
+    </ClInclude>
     <ClInclude Include="src\Neon\Log.h">
       <Filter>Neon</Filter>
     </ClInclude>
@@ -51,6 +57,12 @@
   <ItemGroup>
     <ClCompile Include="src\NEON_PCH.cpp" />
     <ClCompile Include="src\Neon\Application.cpp">
+      <Filter>Neon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Neon\Layer.cpp">
+      <Filter>Neon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Neon\LayerStack.cpp">
       <Filter>Neon</Filter>
     </ClCompile>
     <ClCompile Include="src\Neon\Log.cpp">
