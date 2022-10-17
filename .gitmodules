@@ -1,3 +1,6 @@
 [submodule "Neon/vendor/spdlog"]
 	path = Neon/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "NEON/vendor/GLFW"]
+	path = NEON/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git

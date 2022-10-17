@@ -7,6 +7,12 @@
     <Filter Include="Neon\Events">
       <UniqueIdentifier>{B96788F7-251D-01ED-AE11-FBC31AC6F7F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\NEON_PCH.h" />
@@ -35,6 +41,12 @@
     <ClInclude Include="src\Neon\Log.h">
       <Filter>Neon</Filter>
     </ClInclude>
+    <ClInclude Include="src\Neon\Window.h">
+      <Filter>Neon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\NEON_PCH.cpp" />
@@ -43,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="src\Neon\Log.cpp">
       <Filter>Neon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

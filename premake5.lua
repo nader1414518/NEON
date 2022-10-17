@@ -10,6 +10,12 @@ workspace "Neon"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "NEON/vendor/GLFW/include"
+
+include "NEON/vendor/GLFW"
+
 project "Neon"
     location "Neon"
     kind "SharedLib"
@@ -30,7 +36,14 @@ project "Neon"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links 
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"
