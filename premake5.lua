@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "NEON/vendor/GLFW/include"
+IncludeDir["Glad"] = "NEON/vendor/Glad/include"
 
 include "NEON/vendor/GLFW"
+include "NEON/vendor/Glad"
 
 project "Neon"
     location "Neon"
@@ -37,12 +39,14 @@ project "Neon"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links 
     {
         "GLFW",
+        "Glad",
         "opengl32.lib"
     }
 
@@ -54,7 +58,8 @@ project "Neon"
         defines 
         {
             "NEON_PLATFORM_WINDOWS",
-            "NEON_BUILD_DLL"
+            "NEON_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
