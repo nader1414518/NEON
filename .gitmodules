@@ -4,3 +4,6 @@
 [submodule "NEON/vendor/GLFW"]
 	path = NEON/vendor/GLFW
 	url = https://github.com/TheCherno/glfw.git
+[submodule "NEON/vendor/imgui"]
+	path = NEON/vendor/imgui
+	url = https://github.com/TheCherno/imgui

@@ -7,6 +7,8 @@
 #include <stdio.h>;
 #include "Neon/Layer.h";
 
+#include "Neon/ImGui/ImGuiLayer.h";
+
 ///////////////// Log Level ////////////////////
 #include "Neon/Log.h";
 

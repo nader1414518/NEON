@@ -7,8 +7,14 @@
     <Filter Include="Neon\Events">
       <UniqueIdentifier>{B96788F7-251D-01ED-AE11-FBC31AC6F7F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Neon\ImGui">
+      <UniqueIdentifier>{5F8A185D-4B42-5AAA-B449-3306A020F59A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -38,6 +44,9 @@
     <ClInclude Include="src\Neon\Events\MouseEvent.h">
       <Filter>Neon\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Neon\ImGui\ImGuiLayer.h">
+      <Filter>Neon\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Neon\Layer.h">
       <Filter>Neon</Filter>
     </ClInclude>
@@ -50,6 +59,9 @@
     <ClInclude Include="src\Neon\Window.h">
       <Filter>Neon</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -59,6 +71,9 @@
     <ClCompile Include="src\Neon\Application.cpp">
       <Filter>Neon</Filter>
     </ClCompile>
+    <ClCompile Include="src\Neon\ImGui\ImGuiLayer.cpp">
+      <Filter>Neon\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Neon\Layer.cpp">
       <Filter>Neon</Filter>
     </ClCompile>
@@ -67,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="src\Neon\Log.cpp">
       <Filter>Neon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
