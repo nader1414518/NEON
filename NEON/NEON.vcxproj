@@ -149,6 +149,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Neon\Input.h" />
     <ClInclude Include="src\NEON_PCH.h" />
     <ClInclude Include="src\Neon.h" />
     <ClInclude Include="src\Neon\Application.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="src\Neon\Log.h" />
     <ClInclude Include="src\Neon\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +176,7 @@
     <ClCompile Include="src\Neon\LayerStack.cpp" />
     <ClCompile Include="src\Neon\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
