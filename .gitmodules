@@ -7,3 +7,6 @@
 [submodule "NEON/vendor/imgui"]
 	path = NEON/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "NEON/vendor/glm"]
+	path = NEON/vendor/glm
+	url = https://github.com/g-truc/glm
