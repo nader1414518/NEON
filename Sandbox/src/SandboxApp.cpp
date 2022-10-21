@@ -40,8 +40,6 @@ class Sandbox : public Neon::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Neon::ImGuiLayer());
-
 	};
 
 	~Sandbox() {
