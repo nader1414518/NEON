@@ -150,6 +150,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Neon\Input.h" />
+    <ClInclude Include="src\Neon\KeyCodes.h" />
+    <ClInclude Include="src\Neon\MouseButtonCodes.h" />
     <ClInclude Include="src\NEON_PCH.h" />
     <ClInclude Include="src\Neon.h" />
     <ClInclude Include="src\Neon\Application.h" />

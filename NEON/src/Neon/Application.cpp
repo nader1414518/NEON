@@ -65,7 +65,7 @@ namespace Neon {
 			}
 
 			auto [x, y] = Input::GetMousePosition();
-			NeonCoreLogTrace("{0}, {1}", x, y);
+			//NeonCoreLogTrace("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		} 

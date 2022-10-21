@@ -9,6 +9,11 @@
 
 #include "Neon/ImGui/ImGuiLayer.h";
 
+///////////////// Input Section ////////////////
+#include "Neon/Input.h";
+#include "Neon/KeyCodes.h";
+#include "Neon/MouseButtonCodes.h";
+
 ///////////////// Log Level ////////////////////
 #include "Neon/Log.h";
 

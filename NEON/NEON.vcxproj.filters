@@ -67,6 +67,8 @@
     </ClInclude>
     <ClInclude Include="src\Neon\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Neon\KeyCodes.h" />
+    <ClInclude Include="src\Neon\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\NEON_PCH.cpp" />

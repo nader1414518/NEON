@@ -11,12 +11,28 @@ public:
 
 	void OnUpdate() override
 	{
-		NeonLogInfo("ExampleLayer::Update");
+		//NeonLogInfo("ExampleLayer::Update");
+
+		/*if (Neon::Input::IsKeyPressed(NEON_KEY_TAB))
+		{
+			NeonLogInfo("Tab key is pressed ... ");
+		}*/
 	}
 
 	void OnEvent(Neon::Event& event) override
 	{
-		NeonLogTrace("{0}", event);
+		//NeonLogTrace("{0}", event);
+
+		if (event.GetEventType() == Neon::EventType::KeyPressed)
+		{
+			Neon::KeyPressedEvent& e = (Neon::KeyPressedEvent&)event;
+			//NeonLogDebug("{0}", (char)e.GetKeyCode());
+
+			if (e.GetKeyCode() == NEON_KEY_ENTER)
+			{
+				NeonLogDebug("You pressed enter!!");
+			}
+		}
 	}
 };
 
@@ -25,6 +41,7 @@ public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
 		PushOverlay(new Neon::ImGuiLayer());
+
 	};
 
 	~Sandbox() {
