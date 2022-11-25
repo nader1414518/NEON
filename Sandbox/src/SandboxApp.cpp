@@ -1,6 +1,7 @@
 #include <Neon.h>
 
-#include "imgui.h";
+#include "imgui.h"
+
 
 class ExampleLayer : public Neon::Layer
 {

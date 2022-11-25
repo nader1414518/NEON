@@ -2,7 +2,7 @@ project "Glad"
 	kind "StaticLib"
 	language "C"
 	-- Important at runtime 
-	staticruntime "On"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -36,8 +36,8 @@ project "Glad"
 		optimize "on"
 		buildoptions "/MT"
 
-	filter "configurations:Dist"
-		runtime "Release"
-		optimize "on"
-        symbols "off"
-		buildoptions "/MT"
+	-- filter "configurations:Dist"
+	-- 	runtime "Release"
+	-- 	optimize "on"
+    --     symbols "off"
+	-- 	buildoptions "/MT"

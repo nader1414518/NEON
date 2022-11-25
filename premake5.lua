@@ -26,8 +26,10 @@ include "NEON/vendor/imgui"
 
 project "Neon"
     location "Neon"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -41,6 +43,11 @@ project "Neon"
         "%{prj.name}/src/**.cpp",
         "%{prj.name}/vendor/glm/glm/**.hpp",
         "%{prj.name}/vendor/glm/glm/**.inl",
+    }
+
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
     }
 
     includedirs
@@ -62,7 +69,6 @@ project "Neon"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
         staticruntime "On"
         systemversion "latest"
 
@@ -72,33 +78,36 @@ project "Neon"
             "NEON_PLATFORM_WINDOWS",
             "NEON_BUILD_DLL",
             "GLFW_INCLUDE_NONE"
+            -- "_CRT_SECURE_NO_WARNINGS"
         }
 
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-        }
+        -- postbuildcommands
+        -- {
+        --     ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+        -- }
 
     filter "configurations:Debug"
         defines "NEON_DEBUG"
-        buildoptions "/MDd"
-        symbols "On"
+        -- buildoptions "/MDd"
+        symbols "on"
 
     filter "configurations:Release"
         defines "NEON_RELEASE"
-        buildoptions "/MD"
-        optimize "On"
+        -- buildoptions "/MD"
+        optimize "on"
 
-    filter "configurations:Dist"
-        defines "NEON_DIST"
-        buildoptions "/MD"
-        optimize "On"
+    -- filter "configurations:Dist"
+    --     defines "NEON_DIST"
+    --     buildoptions "/MD"
+    --     optimize "on"
 
 
 project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -123,7 +132,6 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
         staticruntime "On"
         systemversion "latest"
 
@@ -135,15 +143,15 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "NEON_DEBUG"
-        buildoptions "/MDd"
-        symbols "On"
+        -- buildoptions "/MDd"
+        symbols "on"
 
     filter "configurations:Release"
         defines "NEON_RELEASE"
-        buildoptions "/MD"
-        optimize "On"
+        -- buildoptions "/MD"
+        optimize "on"
 
-    filter "configurations:Dist"
-        defines "NEON_DIST"
-        buildoptions "/MD"
-        optimize "On"
+    -- filter "configurations:Dist"
+    --     defines "NEON_DIST"
+    --     buildoptions "/MD"
+    --     optimize "on"
