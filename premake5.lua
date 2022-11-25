@@ -68,6 +68,7 @@ project "Neon"
 
         defines 
         {
+            "IMGUI_API=__declspec(dllexport)",
             "NEON_PLATFORM_WINDOWS",
             "NEON_BUILD_DLL",
             "GLFW_INCLUDE_NONE"
@@ -112,6 +113,7 @@ project "Sandbox"
     {
         "Neon/vendor/spdlog/include",
         "Neon/src",
+        "NEON/vendor/imgui",
         "%{IncludeDir.glm}"
     }
 
@@ -127,6 +129,7 @@ project "Sandbox"
 
         defines 
         {
+            "IMGUI_API=__declspec(dllimport)",
             "NEON_PLATFORM_WINDOWS"
         }
 
