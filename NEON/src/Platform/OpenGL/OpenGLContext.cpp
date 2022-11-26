@@ -15,6 +15,14 @@ namespace Neon
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		NeonCoreAssert(status, "Failed to initialize Glad!");
+
+		std::string Vendor(reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
+		std::string Renderer(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+		std::string Version(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+
+		NeonCoreLogInfo("Vendor: {0}", Vendor);
+		NeonCoreLogInfo("Renderer: {0}", Renderer);
+		NeonCoreLogInfo("Version: {0}", Version);
 	}
 	void OpenGLContext::SwapBuffers()
 	{
