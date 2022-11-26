@@ -96,6 +96,19 @@ namespace Neon {
 	{
 		static bool show = true;
 		ImGui::ShowDemoWindow(&show);
+		// Show Renderer Stats
+		std::string Vendor(reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
+		Vendor = "Vendor: " + Vendor;
+		std::string Renderer(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+		Renderer = "Renderer: " + Renderer;
+		std::string Version(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+		Version = "Version: " + Version;
+
+		ImGui::Begin("Renderer");
+		ImGui::Text(Vendor.c_str());
+		ImGui::Text(Renderer.c_str());
+		ImGui::Text(Version.c_str());
+		ImGui::End();
 	}
 
 	void ImGuiLayer::Begin()
