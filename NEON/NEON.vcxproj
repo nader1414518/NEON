@@ -131,6 +131,8 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Neon\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\NEON_PCH.h" />
     <ClInclude Include="src\Neon.h" />
     <ClInclude Include="src\Neon\Application.h" />
@@ -567,6 +569,7 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\NEON_PCH.cpp" />
     <ClCompile Include="src\Neon\Application.cpp" />
     <ClCompile Include="src\Neon\ImGui\ImGuiBuild.cpp" />
