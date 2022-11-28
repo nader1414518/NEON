@@ -29,31 +29,8 @@ namespace Neon {
 
 	Application* Application::s_Instance = nullptr;
 
-	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
+	void Application::InitWindow()
 	{
-		switch (type)
-		{
-			case Neon::ShaderDataType::Float:		return GL_FLOAT;
-			case Neon::ShaderDataType::Float2:		return GL_FLOAT;
-			case Neon::ShaderDataType::Float3:		return GL_FLOAT;
-			case Neon::ShaderDataType::Float4:		return GL_FLOAT;
-			case Neon::ShaderDataType::Mat3:		return GL_FLOAT;
-			case Neon::ShaderDataType::Mat4:		return GL_FLOAT;
-			case Neon::ShaderDataType::Int:			return GL_INT;
-			case Neon::ShaderDataType::Int2:		return GL_INT;
-			case Neon::ShaderDataType::Int3:		return GL_INT;
-			case Neon::ShaderDataType::Int4:		return GL_INT;
-			case Neon::ShaderDataType::Bool:		return GL_BOOL;
-		}
-
-		NeonCoreAssert(false, "Unknown Shader Data Type!");
-		return 0;
-	}
-
-	Application::Application() {
-		NeonCoreAssert(!s_Instance, "Application already exists!");
-		s_Instance = this;
-
 		WindowProps props = WindowProps("NEON - Windows", 1280, 720);
 
 		m_Window = std::unique_ptr<Window>(Window::Create(props));
@@ -61,47 +38,41 @@ namespace Neon {
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
+	}
 
-		float vertices[3 * 7] = {
+	void Application::DrawSquare()
+	{
+		std::shared_ptr<VertexBuffer> m_VertexBuffer;
+		std::shared_ptr<IndexBuffer> m_IndexBuffer;
+
+		m_SquarVertexArray.reset(VertexArray::Create());
+
+		float vertices[4 * 8] = {
 			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
-			0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-			0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
 		};
 
+		// Vertex Buffer Initialization
 		m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
-
-		{
-			BufferLayout layout = {
+		BufferLayout layout = {
 			{ ShaderDataType::Float3, "a_Position"},
 			{ ShaderDataType::Float4, "a_Color"},
-			};
+		};
+		m_VertexBuffer->SetLayout(layout);
+		m_SquarVertexArray->AddVertexBuffer(m_VertexBuffer);
 
-			m_VertexBuffer->SetLayout(layout);
-		}
+		uint32_t indices[6] = { 0, 1, 2, 2, 3, 0 };
 
-		uint32_t index = 0;
-		const auto& layout = m_VertexBuffer->GetLayout();
-		for (const auto& element : layout)
-		{
-			glEnableVertexAttribArray(index);
-			glVertexAttribPointer(
-				index, 
-				element.GetComponentCount(), 
-				ShaderDataTypeToOpenGLBaseType(element.Type), 
-				element.Normalized? GL_TRUE : GL_FALSE, 
-				layout.GetStride(), 
-				(const void*)element.Offset
-			);
-			index++;
-		}
+		// Index Buffer Initialization
+		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		m_SquarVertexArray->SetIndexBuffer(m_IndexBuffer);
 
-		/*glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (const void*)12);*/
+		m_IndexBuffers.push_back(m_IndexBuffer);
 
-		uint32_t indices[3] = { 0, 1, 2 };
-		
-		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices)/sizeof(uint32_t)));
-
+		// Shader Initialization
+		std::shared_ptr<Shader> m_Shader;
 		std::string vertexSrc = R"(
 			#version 330 core
 
@@ -135,6 +106,86 @@ namespace Neon {
 		)";
 
 		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
+		m_Shaders.push_back(m_Shader);
+	}
+
+	void Application::DrawTriangle()
+	{
+		std::shared_ptr<VertexBuffer> m_VertexBuffer;
+		std::shared_ptr<IndexBuffer> m_IndexBuffer;
+
+		m_TriangleVertexArray.reset(VertexArray::Create());
+
+		float vertices[3 * 7] = {
+			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+			0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
+			0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+		};
+
+		// Vertex Buffer Initialization
+		m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
+		BufferLayout layout = {
+			{ ShaderDataType::Float3, "a_Position"},
+			{ ShaderDataType::Float4, "a_Color"},
+		};
+		m_VertexBuffer->SetLayout(layout);
+		m_TriangleVertexArray->AddVertexBuffer(m_VertexBuffer);
+
+		uint32_t indices[3] = { 0, 1, 2 };
+
+		// Index Buffer Initialization
+		m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		m_TriangleVertexArray->SetIndexBuffer(m_IndexBuffer);
+
+		m_IndexBuffers.push_back(m_IndexBuffer);
+
+		// Shader Initialization
+		std::shared_ptr<Shader> m_Shader;
+		std::string vertexSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec4 a_Color;
+
+			out vec3 v_Position;
+			out vec4 v_Color;
+
+			void main()
+			{
+				v_Position = a_Position;
+				v_Color = a_Color;
+				gl_Position = vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string fragmentSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec3 v_Position;
+			in vec4 v_Color;
+
+			void main()
+			{
+				//color = vec4(v_Position * 0.5 + 0.5, 1.0);
+				color = v_Color;
+			}
+		)";
+
+		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
+		m_Shaders.push_back(m_Shader);
+	}
+
+	Application::Application() {
+		NeonCoreAssert(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
+		Application::InitWindow();
+
+		Application::DrawSquare();
+
+		Application::DrawTriangle();
 	};
 
 	Application::~Application() { 
@@ -177,9 +228,16 @@ namespace Neon {
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			// Draw GFX 
-			m_Shader->Bind();
-			glBindVertexArray(m_VertexArray);
-			glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+			m_Shaders[0]->Bind();
+			m_SquarVertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, m_IndexBuffers[0]->GetCount(), GL_UNSIGNED_INT, nullptr);
+
+			m_Shaders[1]->Bind();
+			m_TriangleVertexArray->Bind();
+			glDrawElements(GL_TRIANGLES, m_IndexBuffers[1]->GetCount(), GL_UNSIGNED_INT, nullptr);
+
+
+
 
 			for (Layer* layer : m_LayerStack)
 			{

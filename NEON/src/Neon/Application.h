@@ -8,6 +8,7 @@
 #include "Neon/ImGui/ImGuiLayer.h"
 #include "Neon/Renderer/Shader.h"
 #include "Neon/Renderer/Buffer.h"
+#include "Neon/Renderer/VertexArray.h"
 
 namespace Neon {
 
@@ -19,6 +20,10 @@ namespace Neon {
 		virtual ~Application();
 		void Run();
 		void OnEvent(Event& e);
+
+		void InitWindow();
+		void DrawTriangle();
+		void DrawSquare();
 
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
@@ -33,12 +38,12 @@ namespace Neon {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexArray;
+		std::vector<std::shared_ptr<Shader>> m_Shaders;
+		std::vector<std::shared_ptr<VertexBuffer>> m_VertexBuffers;
+		std::vector<std::shared_ptr<IndexBuffer>> m_IndexBuffers;
 
-		std::unique_ptr<Shader> m_Shader;
-		
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer> m_IndexBuffer;
+		std::shared_ptr<VertexArray> m_TriangleVertexArray;
+		std::shared_ptr<VertexArray> m_SquarVertexArray;
 
 		static Application* s_Instance;
 	};
