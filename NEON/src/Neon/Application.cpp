@@ -6,6 +6,8 @@
 
 #include "Input.h"
 
+#include "Renderer/Renderer.h"
+
 //#include <glm/vec3.hpp> // glm::vec3
 //#include <glm/vec4.hpp> // glm::vec4
 //#include <glm/mat4x4.hpp> // glm::mat4
@@ -227,24 +229,34 @@ namespace Neon {
 			glClearColor(0.1f, 0.1f, 0.1f, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			// Draw GFX 
+			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+			RenderCommand::Clear();
+
+			Renderer::BeginScene();
+
 			m_Shaders[0]->Bind();
-			m_SquarVertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_IndexBuffers[0]->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_SquarVertexArray);
 
 			m_Shaders[1]->Bind();
-			m_TriangleVertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_IndexBuffers[1]->GetCount(), GL_UNSIGNED_INT, nullptr);
+			Renderer::Submit(m_TriangleVertexArray);
+			
+			Renderer::EndScene();
 
+			//Renderer::Flush();
 
+			//// Draw GFX 
+			//m_Shaders[0]->Bind();
+			//m_SquarVertexArray->Bind();
+			//glDrawElements(GL_TRIANGLES, m_IndexBuffers[0]->GetCount(), GL_UNSIGNED_INT, nullptr);
 
+			//m_Shaders[1]->Bind();
+			//m_TriangleVertexArray->Bind();
+			//glDrawElements(GL_TRIANGLES, m_IndexBuffers[1]->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : m_LayerStack)
 			{
 				layer->OnUpdate();
 			}
-
-			
 
 			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)

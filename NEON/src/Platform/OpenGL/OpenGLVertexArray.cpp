@@ -8,17 +8,17 @@ namespace Neon {
 	{
 		switch (type)
 		{
-		case Neon::ShaderDataType::Float:		return GL_FLOAT;
-		case Neon::ShaderDataType::Float2:		return GL_FLOAT;
-		case Neon::ShaderDataType::Float3:		return GL_FLOAT;
-		case Neon::ShaderDataType::Float4:		return GL_FLOAT;
-		case Neon::ShaderDataType::Mat3:		return GL_FLOAT;
-		case Neon::ShaderDataType::Mat4:		return GL_FLOAT;
-		case Neon::ShaderDataType::Int:			return GL_INT;
-		case Neon::ShaderDataType::Int2:		return GL_INT;
-		case Neon::ShaderDataType::Int3:		return GL_INT;
-		case Neon::ShaderDataType::Int4:		return GL_INT;
-		case Neon::ShaderDataType::Bool:		return GL_BOOL;
+			case Neon::ShaderDataType::Float:		return GL_FLOAT;
+			case Neon::ShaderDataType::Float2:		return GL_FLOAT;
+			case Neon::ShaderDataType::Float3:		return GL_FLOAT;
+			case Neon::ShaderDataType::Float4:		return GL_FLOAT;
+			case Neon::ShaderDataType::Mat3:		return GL_FLOAT;
+			case Neon::ShaderDataType::Mat4:		return GL_FLOAT;
+			case Neon::ShaderDataType::Int:			return GL_INT;
+			case Neon::ShaderDataType::Int2:		return GL_INT;
+			case Neon::ShaderDataType::Int3:		return GL_INT;
+			case Neon::ShaderDataType::Int4:		return GL_INT;
+			case Neon::ShaderDataType::Bool:		return GL_BOOL;
 		}
 
 		NeonCoreAssert(false, "Unknown Shader Data Type!");

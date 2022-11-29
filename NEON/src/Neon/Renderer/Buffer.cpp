@@ -11,8 +11,8 @@ namespace Neon {
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::None:	NeonCoreAssert(false, "RendererAPI None is currently not supported!!") return nullptr;
-			case RendererAPI::OpenGL: return new OpenGLVertexBuffer(vertices, size);
+			case RendererAPI::API::None:	NeonCoreAssert(false, "RendererAPI None is currently not supported!!") return nullptr;
+			case RendererAPI::API::OpenGL: return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		NeonCoreAssert(false, "Unknown Renderer API ... ");
@@ -24,8 +24,8 @@ namespace Neon {
 	{
 		switch (Renderer::GetAPI())
 		{
-			case RendererAPI::None:	NeonCoreAssert(false, "RendererAPI None is currently not supported!!") return nullptr;
-			case RendererAPI::OpenGL: return new OpenGLIndexBuffer(indices, size);
+			case RendererAPI::API::None:	NeonCoreAssert(false, "RendererAPI None is currently not supported!!") return nullptr;
+			case RendererAPI::API::OpenGL: return new OpenGLIndexBuffer(indices, size);
 		}
 
 		NeonCoreAssert(false, "Unknown Renderer API ... ");
