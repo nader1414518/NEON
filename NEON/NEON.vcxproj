@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Neon\Renderer\Buffer.h" />
+    <ClInclude Include="src\Neon\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Neon\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Neon\Renderer\Renderer.h" />
     <ClInclude Include="src\Neon\Renderer\RendererAPI.h" />
@@ -579,6 +580,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Neon\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Neon\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Neon\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Neon\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Neon\Renderer\RendererAPI.cpp" />

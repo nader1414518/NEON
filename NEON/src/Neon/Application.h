@@ -9,6 +9,7 @@
 #include "Neon/Renderer/Shader.h"
 #include "Neon/Renderer/Buffer.h"
 #include "Neon/Renderer/VertexArray.h"
+#include "Neon/Renderer/OrthographicCamera.h"
 
 namespace Neon {
 
@@ -21,6 +22,7 @@ namespace Neon {
 		void Run();
 		void OnEvent(Event& e);
 
+		//void InitCamera();
 		void InitWindow();
 		void DrawTriangle();
 		void DrawSquare();
@@ -44,6 +46,8 @@ namespace Neon {
 
 		std::shared_ptr<VertexArray> m_TriangleVertexArray;
 		std::shared_ptr<VertexArray> m_SquarVertexArray;
+
+		OrthographicCamera m_Camera;
 
 		static Application* s_Instance;
 	};
