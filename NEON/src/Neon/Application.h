@@ -24,8 +24,6 @@ namespace Neon {
 
 		//void InitCamera();
 		void InitWindow();
-		void DrawTriangle();
-		void DrawSquare();
 
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
@@ -39,15 +37,6 @@ namespace Neon {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::vector<std::shared_ptr<Shader>> m_Shaders;
-		std::vector<std::shared_ptr<VertexBuffer>> m_VertexBuffers;
-		std::vector<std::shared_ptr<IndexBuffer>> m_IndexBuffers;
-
-		std::shared_ptr<VertexArray> m_TriangleVertexArray;
-		std::shared_ptr<VertexArray> m_SquarVertexArray;
-
-		OrthographicCamera m_Camera;
 
 		static Application* s_Instance;
 	};
